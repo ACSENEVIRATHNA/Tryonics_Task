@@ -1,4 +1,4 @@
-# My Project
+# User Management System
 
 This project includes a React application and a PHP backend that interacts with a MySQL database. This README provides instructions on how to set up the PHP backend using XAMPP and import the SQL schema to create the necessary database and the table.
 
