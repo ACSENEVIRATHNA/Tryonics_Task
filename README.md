@@ -78,6 +78,20 @@ Tryonics_Task/
      ```
    - The React application should now be running at `http://localhost:3000`.
 
+## Screenshots
+
+### User List Page
+![User List Page](./screenshots/ss(1).png)
+
+### Add New User
+![Add New User](./screenshots/ss(3).png)
+
+### Edit User
+![Edit User](./screenshots/ss(2).png)
+
+### Search Users
+![Search Users](./screenshots/ss(4).png)
+
 ## Conclusion
 
 Your PHP backend should now be set up and running on XAMPP, and your MySQL database should be configured with the necessary tables. You can start building and testing React application with the backend API.

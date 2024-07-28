@@ -5,7 +5,7 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
-
+/* Form Compponent */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -35,6 +35,30 @@
   cursor: pointer;
 }
 
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.form-control {
+  padding-left: 35px; 
+}
+
+.about{
+  top:18%;
+}
+
+
+/* Home Page */
 .pagination {
   display: flex;
   list-style-type: none;
@@ -64,29 +88,6 @@
   background-color: #007bff;
   color: white;
   border-color: #007bff;
-}
-
-
-.input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-}
-
-.form-control {
-  padding-left: 35px; 
-}
-
-.about{
-  top:18%;
 }
 
 .table-responsive {
@@ -132,7 +133,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+ /* Popup Component */
 .popup {
   position: absolute;
   background: white;

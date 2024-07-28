@@ -5,6 +5,7 @@ import "jquery-validation";
 import { MdOutlineModeEdit, MdAdd } from "react-icons/md";
 import { FaUser, FaEnvelope, FaPhoneAlt, FaCalendarAlt, FaInfoCircle ,FaGlobe} from "react-icons/fa";
 import { countries } from "../utils/data";
+import { toast } from "react-toastify";
 
 const Form = (props) => {
   const { user, setShow, loadUsers } = props;
@@ -54,7 +55,7 @@ const Form = (props) => {
         handleSubmit();
       },
     });
-  }, []);
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,34 +68,28 @@ const Form = (props) => {
 
   const handleSubmit = async () => {
     const latestFormData = formDataRef.current;
-    console.log(latestFormData);
     try {
       let response;
       if (latestFormData.id) {
         response = await axios.post(
           "http://localhost/php-backend/update_user.php",
           latestFormData
-        );
+        ).then(toast.success("User Details Updated Successfully!"));
       } else {
         response = await axios.post(
           "http://localhost/php-backend/insert_user.php",
           latestFormData
-        );
+        ).then(toast.success("User Added Successfully!"));
       }
 
       if (response.data.includes("successfully")) {
-        alert(
-          user
-            ? "User details updated successfully!"
-            : "User added successfully!"
-        );
         loadUsers();
         setShow(false);
       } else {
         throw new Error(response.data);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      toast.error("Error submitting form:", error);
       setError(error.message);
     }
   };

@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 
 const Popup = (props) => {
   const { data, position } = props;
@@ -23,7 +24,7 @@ const Popup = (props) => {
         <strong>Country:</strong> {data.country}
       </div>
       <div>
-        <strong>Birthday:</strong> {data.birthday}
+        <strong>Birthday:</strong> {format(new Date(data.birthday), "d MMM yyyy")}
       </div>
       <div>
         <strong>About:</strong> {data.about}
